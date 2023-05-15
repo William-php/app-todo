@@ -1,0 +1,37 @@
+@import '../../../../dist/scss/variables.scss';
+
+section {
+    width: 100%;
+    min-height: 250px;
+
+    background: $secondary-bg-color;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+
+    margin-top: 20px;
+
+    &.loading {
+        background-image: ulr("../../../../../assets/imgs/bg-task 1.png");
+        background-repeat: no-repeat;
+        background-position: center 30px;
+    }
+}
+
+ul {
+    padding: 20px;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 10px;
+
+        input[type="checkbox"] {
+            width: 5%;
+        }
+
+        input[type="text"] {
+            width: 80%;
+        }
+    }
+}
