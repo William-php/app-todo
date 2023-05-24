@@ -1,13 +1,14 @@
-<section>
-    <ul>
-        <li>
-            <input type="checkbox" name="" id="">
-            <button>
+<section [ngClass]="{'loading': !taskList.length}">
+    <ul *ngIf="taskList.length">
+        <li *ngFor="let item of taskList; let i = index">
+            <input type="checkbox" [(ngModel)]="item.checked">
+            <input type="text" [ngClass]="{'checked': item.checked}" [(ngModel)]="item.task">
+            <button class="btn-trash" (click)="deleteItem(i)">
                 <i class="fa fa-trash" aria-hidden="true"></i>
             </button>
         </li>
     </ul>
 </section>
 
-<app-todo-input-add-item></app-todo-input-add-item>
-<app-todo-btn-delete-all></app-todo-btn-delete-all>
+<app-todo-input-add-item (emitTask)="addTask($event)"></app-todo-input-add-item>
+<app-todo-btn-delete-all *ngIf="taskList.length" (click)="deleteAll()"></app-todo-btn-delete-all>

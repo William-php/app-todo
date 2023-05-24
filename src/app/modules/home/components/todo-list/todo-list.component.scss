@@ -4,13 +4,13 @@ section {
     width: 100%;
     min-height: 250px;
 
-    background: $secondary-bg-color;
+    background: $tertiary-color;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
 
     margin-top: 20px;
 
     &.loading {
-        background-image: ulr("../../../../../assets/imgs/bg-task 1.png");
+        background-image: url("../../../../../assets/imgs/bg-task 1.png");
         background-repeat: no-repeat;
         background-position: center 30px;
     }
@@ -32,6 +32,26 @@ ul {
 
         input[type="text"] {
             width: 80%;
+            padding: 5px 10px;
+            border: none;
+            font-size: 16px;
+            color: $primary-text-color;
+            outline: none;
+        }
+
+        .checked {
+            text-decoration: line-through;
         }
     }
 }
+
+.btn-trash {
+    width: 5%;
+    background: transparent;
+    border: none;
+    cursor:pointer;
+    i {
+        color: $secondary-color;
+    }
+}
+
