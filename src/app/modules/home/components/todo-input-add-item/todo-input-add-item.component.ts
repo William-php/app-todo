@@ -14,7 +14,7 @@ export class TodoInputAddItemComponent implements OnInit {
   }
 
   public submitItem(): void {
-    this.emitTask.emit(this.task);
+    if (this.task.trim().length) this.emitTask.emit(this.task);
     this.task = "";
   }
 
